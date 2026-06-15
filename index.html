@@ -1,180 +1,527 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Gentleman's Cut</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap');
 
-<nav>
-  <h2>The Gentleman's Cut</h2>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+html{
+  scroll-behavior:smooth;
+}
 
-<section class="hero" id="home">
-  <div class="hero-content">
-    <span class="small-title">Luxury Barber Studio</span>
-    <h1>The Gentleman's Cut</h1>
-    <p>Sharp Cuts. Clean Fades. Premium Service.</p>
-    <div class="hero-buttons">
-      <a href="#contact" class="btn">Book Appointment</a>
-      <a href="#services" class="btn secondary-btn">View Services</a>
-    </div>
-  </div>
-</section>
+body{
+  font-family:'Inter', Arial, sans-serif;
+  background:#0a0a0a;
+  color:white;
+}
 
-<section class="about" id="about">
-  <div class="about-image">
-    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=900" alt="Premium barber shop">
-  </div>
+.hero{
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.88)),
+    url("https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1800&q=80");
+  background-size:cover;
+  background-position:center;
+  padding:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
-  <div class="about-content">
-    <span class="section-label">About Us</span>
-    <h2>Premium Grooming For Modern Gentlemen</h2>
+.hero-frame{
+  width:100%;
+  min-height:92vh;
+  padding:45px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  background:rgba(0,0,0,.24);
+}
 
-    <p>
-      At The Gentleman's Cut, we combine traditional barbering with modern style.
-      From sharp skin fades to beard trims and hot towel shaves, every appointment
-      is designed to deliver a clean, confident look.
-    </p>
+.hero-frame::before,
+.hero-frame::after{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  pointer-events:none;
+}
 
-    <div class="stats">
-      <div class="stat">
-        <h3>15+</h3>
-        <p>Years Experience</p>
-      </div>
+.hero-frame::before{
+  top:0;
+  left:0;
+  border-top:2px solid #D4AF37;
+  border-left:2px solid #D4AF37;
+}
 
-      <div class="stat">
-        <h3>5000+</h3>
-        <p>Haircuts</p>
-      </div>
+.hero-frame::after{
+  bottom:0;
+  right:0;
+  border-bottom:2px solid #D4AF37;
+  border-right:2px solid #D4AF37;
+}
 
-      <div class="stat">
-        <h3>4.9★</h3>
-        <p>Average Rating</p>
-      </div>
-    </div>
-  </div>
-</section>
+.brand-top{
+  text-align:center;
+  z-index:2;
+}
 
-<section class="services" id="services">
-  <span class="section-label">Our Services</span>
-  <h2>Luxury Barber Services</h2>
+.brand-top h2{
+  font-family:'Playfair Display', serif;
+  color:#D4AF37;
+  font-size:3.2rem;
+  margin-bottom:24px;
+  text-shadow:0 0 22px rgba(212,175,55,.25);
+}
 
-  <div class="service-grid">
-    <div class="service-card">
-      <h3>Haircut</h3>
-      <p>Precision cuts tailored to your style and face shape.</p>
-      <span>From £18</span>
-    </div>
+.brand-top ul{
+  display:flex;
+  justify-content:center;
+  gap:38px;
+  list-style:none;
+  flex-wrap:wrap;
+}
 
-    <div class="service-card">
-      <h3>Skin Fade</h3>
-      <p>Clean modern fades with sharp detail and smooth blending.</p>
-      <span>From £22</span>
-    </div>
+.brand-top a{
+  color:white;
+  text-decoration:none;
+  font-size:1.05rem;
+  transition:.3s;
+}
 
-    <div class="service-card">
-      <h3>Beard Trim</h3>
-      <p>Professional beard shaping, line-up and maintenance.</p>
-      <span>From £10</span>
-    </div>
+.brand-top a:hover{
+  color:#D4AF37;
+}
 
-    <div class="service-card">
-      <h3>Hot Towel Shave</h3>
-      <p>A luxury traditional barber experience with premium products.</p>
-      <span>From £25</span>
-    </div>
-  </div>
-</section>
+.hero-content{
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+  z-index:2;
+}
 
-<section class="gallery" id="gallery">
-  <span class="section-label">Gallery</span>
-  <h2>Recent Cuts</h2>
+.small-title,
+.section-label{
+  color:#D4AF37;
+  text-transform:uppercase;
+  letter-spacing:7px;
+  font-size:13px;
+  font-weight:700;
+}
 
-  <div class="gallery-grid">
-    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=700" alt="Barber haircut">
-    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=700" alt="Barber shop">
-    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=700" alt="Haircut">
-  </div>
-</section>
+.divider{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  margin:24px 0;
+  color:#D4AF37;
+  font-size:2rem;
+}
 
-<section class="testimonials">
-  <span class="section-label">Reviews</span>
-  <h2>What Clients Say</h2>
+.divider span{
+  width:70px;
+  height:1px;
+  background:#D4AF37;
+}
 
-  <div class="testimonial-grid">
-    <div class="testimonial-card">
-      <p>"Best fade I’ve had. Clean shop, great atmosphere and professional service."</p>
-      <h4>★★★★★</h4>
-      <span>— James</span>
-    </div>
+.hero h1{
+  font-family:'Playfair Display', serif;
+  font-size:6.2rem;
+  line-height:1.03;
+  color:white;
+  margin-bottom:24px;
+  text-shadow:0 0 28px rgba(212,175,55,.28);
+}
 
-    <div class="testimonial-card">
-      <p>"Always sharp, always on time. The attention to detail is unreal."</p>
-      <h4>★★★★★</h4>
-      <span>— Adam</span>
-    </div>
+.hero-content > p{
+  font-size:1.45rem;
+  color:#f2f2f2;
+  margin-bottom:36px;
+}
 
-    <div class="testimonial-card">
-      <p>"Premium experience from start to finish. Would highly recommend."</p>
-      <h4>★★★★★</h4>
-      <span>— Ryan</span>
-    </div>
-  </div>
-</section>
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  gap:24px;
+  flex-wrap:wrap;
+}
 
-<section class="contact" id="contact">
-  <div class="contact-content">
-    <span class="section-label">Book Now</span>
-    <h2>Book Your Appointment</h2>
-    <p>Ready for a fresh look? Get in touch or request a booking below.</p>
+.btn,
+form button{
+  background:#D4AF37;
+  color:black;
+  text-decoration:none;
+  padding:17px 54px;
+  border-radius:2px;
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  display:inline-block;
+  border:1px solid #D4AF37;
+  cursor:pointer;
+  transition:.3s;
+}
 
-    <div class="contact-wrapper">
-      <div class="contact-info">
-        <h3>Contact Details</h3>
-        <p>📞 01234 567890</p>
-        <p>📧 info@gentlemanscut.co.uk</p>
-        <p>📍 Manchester, UK</p>
-        <p>📸 @thegentlemanscut</p>
+.btn:hover,
+form button:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 25px rgba(212,175,55,.45);
+}
 
-        <h3>Opening Hours</h3>
-        <p>Mon - Fri: 9:00am - 7:00pm</p>
-        <p>Saturday: 9:00am - 5:00pm</p>
-        <p>Sunday: Closed</p>
-        <p class="walkins">Walk-ins welcome when available.</p>
-      </div>
+.secondary-btn{
+  background:rgba(0,0,0,.25);
+  color:white;
+}
 
-      <form>
-        <input type="text" placeholder="Your Name">
-        <input type="tel" placeholder="Phone Number">
-        <select>
-          <option>Select Service</option>
-          <option>Haircut</option>
-          <option>Skin Fade</option>
-          <option>Beard Trim</option>
-          <option>Hot Towel Shave</option>
-        </select>
-        <input type="date">
-        <textarea placeholder="Message"></textarea>
-        <button type="submit">Request Booking</button>
-      </form>
-    </div>
-  </div>
-</section>
+.trust-bar{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  background:rgba(0,0,0,.7);
+  border-top:1px solid rgba(212,175,55,.45);
+  margin-top:45px;
+  z-index:2;
+}
 
-<footer>
-  <p>© 2026 The Gentleman's Cut. Website concept by HS Digital.</p>
-</footer>
+.trust-bar div{
+  padding:24px;
+  text-align:center;
+  border-right:1px solid rgba(212,175,55,.45);
+}
 
-</body>
-</html>
+.trust-bar div:last-child{
+  border-right:none;
+}
+
+.trust-bar h3{
+  color:#D4AF37;
+  font-size:1.9rem;
+  margin-bottom:10px;
+}
+
+.trust-bar p{
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:white;
+  line-height:1.5;
+  font-size:13px;
+}
+
+.about,
+.services,
+.gallery,
+.testimonials,
+.contact{
+  padding:115px 10%;
+}
+
+.about{
+  background:#111;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:75px;
+  align-items:center;
+}
+
+.about-image img{
+  width:100%;
+  height:520px;
+  object-fit:cover;
+  border-radius:10px;
+  box-shadow:0 25px 60px rgba(0,0,0,.45);
+}
+
+.about-content h2,
+.services h2,
+.gallery h2,
+.testimonials h2,
+.contact h2{
+  font-family:'Playfair Display', serif;
+  color:white;
+  font-size:3.3rem;
+  margin:18px 0 25px;
+}
+
+.about-content p{
+  color:#ddd;
+  line-height:1.9;
+  font-size:1rem;
+}
+
+.feature-list{
+  margin-top:35px;
+  display:grid;
+  gap:12px;
+}
+
+.feature-list p{
+  color:#D4AF37;
+  font-weight:600;
+}
+
+.services{
+  background:#0a0a0a;
+  text-align:center;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+  margin-top:45px;
+}
+
+.service-card{
+  background:#151515;
+  padding:45px 28px;
+  border-radius:8px;
+  border:1px solid #222;
+  transition:.3s;
+}
+
+.service-card:hover{
+  transform:translateY(-10px);
+  border-color:#D4AF37;
+  box-shadow:0 20px 45px rgba(0,0,0,.35);
+}
+
+.service-card h3{
+  color:#D4AF37;
+  margin-bottom:15px;
+  font-size:1.35rem;
+}
+
+.service-card p{
+  color:#ddd;
+  line-height:1.7;
+  margin-bottom:22px;
+}
+
+.service-card span{
+  font-weight:bold;
+  color:white;
+}
+
+.gallery{
+  background:#111;
+  text-align:center;
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+  margin-top:45px;
+}
+
+.gallery-grid img{
+  width:100%;
+  height:380px;
+  object-fit:cover;
+  border-radius:8px;
+  transition:.3s;
+  filter:brightness(.9);
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.03);
+  filter:brightness(1);
+}
+
+.testimonials{
+  background:#0a0a0a;
+  text-align:center;
+}
+
+.testimonial-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+  margin-top:45px;
+}
+
+.testimonial-card{
+  background:#151515;
+  padding:38px;
+  border-radius:8px;
+  border:1px solid #222;
+}
+
+.testimonial-card p{
+  color:#ddd;
+  line-height:1.8;
+}
+
+.testimonial-card h4{
+  color:#D4AF37;
+  margin:22px 0 10px;
+}
+
+.contact{
+  background:#111;
+  text-align:center;
+}
+
+.contact-content{
+  max-width:1100px;
+  margin:auto;
+}
+
+.contact-content > p{
+  color:#ddd;
+  margin-bottom:45px;
+}
+
+.contact-wrapper{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  text-align:left;
+  margin-top:30px;
+}
+
+.contact-info,
+form{
+  background:#151515;
+  padding:38px;
+  border-radius:8px;
+  border:1px solid #222;
+}
+
+.contact-info h3{
+  color:#D4AF37;
+  margin:22px 0 15px;
+}
+
+.contact-info h3:first-child{
+  margin-top:0;
+}
+
+.contact-info p{
+  color:#ddd;
+  margin-bottom:12px;
+}
+
+.walkins{
+  color:#D4AF37 !important;
+  font-weight:bold;
+}
+
+form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  padding:15px;
+  background:#0a0a0a;
+  border:1px solid #333;
+  color:white;
+  border-radius:4px;
+  outline:none;
+  font-family:'Inter', Arial, sans-serif;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:#D4AF37;
+}
+
+textarea{
+  min-height:120px;
+  resize:none;
+}
+
+footer{
+  background:#050505;
+  text-align:center;
+  padding:25px;
+  color:#aaa;
+  font-size:14px;
+}
+
+@media(max-width:1000px){
+  .service-grid,
+  .gallery-grid,
+  .testimonial-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .contact-wrapper{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:5rem;
+  }
+}
+
+@media(max-width:768px){
+  .hero{
+    padding:15px;
+  }
+
+  .hero-frame{
+    padding:28px 20px;
+  }
+
+  .brand-top h2{
+    font-size:2.2rem;
+  }
+
+  .brand-top ul{
+    gap:18px;
+    font-size:14px;
+  }
+
+  .small-title,
+  .section-label{
+    letter-spacing:4px;
+  }
+
+  .hero h1{
+    font-size:3.6rem;
+  }
+
+  .hero-content > p{
+    font-size:1.1rem;
+  }
+
+  .trust-bar{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .trust-bar div:nth-child(2){
+    border-right:none;
+  }
+
+  .about{
+    grid-template-columns:1fr;
+  }
+
+  .about-image img{
+    height:360px;
+  }
+
+  .service-grid,
+  .gallery-grid,
+  .testimonial-grid{
+    grid-template-columns:1fr;
+  }
+
+  .about-content h2,
+  .services h2,
+  .gallery h2,
+  .testimonials h2,
+  .contact h2{
+    font-size:2.4rem;
+  }
+}
