@@ -16,14 +16,62 @@ body{
   color:white;
 }
 
+.sticky-header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:999;
+  padding:18px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(212,175,55,.25);
+}
+
+.sticky-header h2{
+  font-family:'Playfair Display', serif;
+  color:#D4AF37;
+  font-size:2rem;
+}
+
+.sticky-header nav{
+  display:flex;
+  gap:28px;
+}
+
+.sticky-header a{
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  position:relative;
+}
+
+.sticky-header a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#D4AF37;
+  transition:.3s;
+}
+
+.sticky-header a:hover::after{
+  width:100%;
+}
+
 .hero{
   min-height:100vh;
   background:
-    linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.88)),
+    linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.92)),
     url("https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1800&q=80");
   background-size:cover;
   background-position:center;
-  padding:28px;
+  padding:110px 28px 28px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -31,13 +79,12 @@ body{
 
 .hero-frame{
   width:100%;
-  min-height:92vh;
+  min-height:86vh;
   padding:45px;
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
+  justify-content:center;
   position:relative;
-  background:rgba(0,0,0,.24);
 }
 
 .hero-frame::before,
@@ -63,41 +110,9 @@ body{
   border-right:2px solid #D4AF37;
 }
 
-.brand-top{
-  text-align:center;
-  z-index:2;
-}
-
-.brand-top h2{
-  font-family:'Playfair Display', serif;
-  color:#D4AF37;
-  font-size:3.2rem;
-  margin-bottom:24px;
-  text-shadow:0 0 22px rgba(212,175,55,.25);
-}
-
-.brand-top ul{
-  display:flex;
-  justify-content:center;
-  gap:38px;
-  list-style:none;
-  flex-wrap:wrap;
-}
-
-.brand-top a{
-  color:white;
-  text-decoration:none;
-  font-size:1.05rem;
-  transition:.3s;
-}
-
-.brand-top a:hover{
-  color:#D4AF37;
-}
-
 .hero-content{
   text-align:center;
-  max-width:900px;
+  max-width:1100px;
   margin:auto;
   z-index:2;
 }
@@ -117,20 +132,18 @@ body{
   justify-content:center;
   gap:18px;
   margin:24px 0;
-  color:#D4AF37;
-  font-size:2rem;
 }
 
 .divider span{
-  width:70px;
+  width:80px;
   height:1px;
   background:#D4AF37;
 }
 
 .hero h1{
   font-family:'Playfair Display', serif;
-  font-size:6.2rem;
-  line-height:1.03;
+  font-size:6.4rem;
+  line-height:1.05;
   color:white;
   margin-bottom:24px;
   text-shadow:0 0 28px rgba(212,175,55,.28);
@@ -169,7 +182,7 @@ form button{
 .btn:hover,
 form button:hover{
   transform:translateY(-4px);
-  box-shadow:0 0 25px rgba(212,175,55,.45);
+  box-shadow:0 0 25px rgba(212,175,55,.5);
 }
 
 .secondary-btn{
@@ -178,11 +191,11 @@ form button:hover{
 }
 
 .trust-bar{
+  margin-top:60px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  background:rgba(0,0,0,.7);
+  background:rgba(0,0,0,.72);
   border-top:1px solid rgba(212,175,55,.45);
-  margin-top:45px;
   z-index:2;
 }
 
@@ -213,7 +226,7 @@ form button:hover{
 .about,
 .services,
 .gallery,
-.testimonials,
+.reviews,
 .contact{
   padding:115px 10%;
 }
@@ -237,7 +250,7 @@ form button:hover{
 .about-content h2,
 .services h2,
 .gallery h2,
-.testimonials h2,
+.reviews h2,
 .contact h2{
   font-family:'Playfair Display', serif;
   color:white;
@@ -248,7 +261,6 @@ form button:hover{
 .about-content p{
   color:#ddd;
   line-height:1.9;
-  font-size:1rem;
 }
 
 .feature-list{
@@ -262,19 +274,26 @@ form button:hover{
   font-weight:600;
 }
 
-.services{
+.services,
+.reviews{
   background:#0a0a0a;
   text-align:center;
 }
 
-.service-grid{
+.service-grid,
+.review-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:25px;
   margin-top:45px;
 }
 
-.service-card{
+.review-grid{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.service-card,
+.review-card{
   background:#151515;
   padding:45px 28px;
   border-radius:8px;
@@ -282,25 +301,28 @@ form button:hover{
   transition:.3s;
 }
 
-.service-card:hover{
+.service-card:hover,
+.review-card:hover{
   transform:translateY(-10px);
   border-color:#D4AF37;
   box-shadow:0 20px 45px rgba(0,0,0,.35);
 }
 
-.service-card h3{
+.service-card h3,
+.review-card h3{
   color:#D4AF37;
   margin-bottom:15px;
-  font-size:1.35rem;
 }
 
-.service-card p{
+.service-card p,
+.review-card p{
   color:#ddd;
   line-height:1.7;
   margin-bottom:22px;
 }
 
-.service-card span{
+.service-card span,
+.review-card span{
   font-weight:bold;
   color:white;
 }
@@ -329,35 +351,6 @@ form button:hover{
 .gallery-grid img:hover{
   transform:scale(1.03);
   filter:brightness(1);
-}
-
-.testimonials{
-  background:#0a0a0a;
-  text-align:center;
-}
-
-.testimonial-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:25px;
-  margin-top:45px;
-}
-
-.testimonial-card{
-  background:#151515;
-  padding:38px;
-  border-radius:8px;
-  border:1px solid #222;
-}
-
-.testimonial-card p{
-  color:#ddd;
-  line-height:1.8;
-}
-
-.testimonial-card h4{
-  color:#D4AF37;
-  margin:22px 0 10px;
 }
 
 .contact{
@@ -440,6 +433,20 @@ textarea{
   resize:none;
 }
 
+.whatsapp-btn{
+  position:fixed;
+  right:25px;
+  bottom:25px;
+  z-index:1000;
+  background:#D4AF37;
+  color:black;
+  padding:15px 22px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow:0 0 25px rgba(212,175,55,.45);
+}
+
 footer{
   background:#050505;
   text-align:center;
@@ -448,10 +455,21 @@ footer{
   font-size:14px;
 }
 
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
 @media(max-width:1000px){
   .service-grid,
   .gallery-grid,
-  .testimonial-grid{
+  .review-grid{
     grid-template-columns:1fr 1fr;
   }
 
@@ -460,26 +478,34 @@ footer{
   }
 
   .hero h1{
-    font-size:5rem;
+    font-size:4.8rem;
   }
 }
 
 @media(max-width:768px){
+  .sticky-header{
+    flex-direction:column;
+    gap:15px;
+    padding:16px;
+  }
+
+  .sticky-header h2{
+    font-size:1.8rem;
+  }
+
+  .sticky-header nav{
+    gap:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+    font-size:14px;
+  }
+
   .hero{
-    padding:15px;
+    padding:145px 15px 20px;
   }
 
   .hero-frame{
-    padding:28px 20px;
-  }
-
-  .brand-top h2{
-    font-size:2.2rem;
-  }
-
-  .brand-top ul{
-    gap:18px;
-    font-size:14px;
+    padding:30px 18px;
   }
 
   .small-title,
@@ -488,7 +514,7 @@ footer{
   }
 
   .hero h1{
-    font-size:3.6rem;
+    font-size:3.4rem;
   }
 
   .hero-content > p{
@@ -513,15 +539,21 @@ footer{
 
   .service-grid,
   .gallery-grid,
-  .testimonial-grid{
+  .review-grid{
     grid-template-columns:1fr;
   }
 
   .about-content h2,
   .services h2,
   .gallery h2,
-  .testimonials h2,
+  .reviews h2,
   .contact h2{
     font-size:2.4rem;
+  }
+
+  .whatsapp-btn{
+    right:15px;
+    bottom:15px;
+    font-size:14px;
   }
 }
