@@ -23,7 +23,6 @@
 
 <section class="hero" id="home">
   <div class="hero-frame">
-
     <div class="hero-content reveal">
       <span class="small-title">Luxury Barber Studio</span>
 
@@ -52,7 +51,6 @@
       <div><h3>✓</h3><p>Online<br>Booking</p></div>
       <div><h3>★</h3><p>5★ Client<br>Rated</p></div>
     </div>
-
   </div>
 </section>
 
@@ -84,7 +82,7 @@
 
   <div class="service-grid">
     <div class="service-card">
-      <h3>Haircut</h3>
+      <h3>Classic Cut</h3>
       <p>Precision cuts tailored to your style and face shape.</p>
       <span>From £18</span>
     </div>
@@ -111,12 +109,60 @@
 
 <section class="gallery reveal" id="gallery">
   <span class="section-label">Gallery</span>
-  <h2>Recent Cuts</h2>
+  <h2>Popular Styles</h2>
+  <p class="gallery-intro">
+    A selection of clean fades, textured cuts and sharp finishes.
+  </p>
 
   <div class="gallery-grid">
-    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=700" alt="">
-    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=700" alt="">
-    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=700" alt="">
+    <div class="gallery-item" data-title="Fade Design" data-img="images/image 1.png">
+      <img src="images/image 1.png" alt="Fade design haircut">
+      <div class="gallery-overlay">
+        <h3>Fade Design</h3>
+        <p>Sharp detail with a custom finish.</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-title="Modern Taper Fade" data-img="images/image2.png">
+      <img src="images/image2.png" alt="Modern taper fade">
+      <div class="gallery-overlay">
+        <h3>Modern Taper Fade</h3>
+        <p>Clean sides with a natural textured top.</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-title="Textured Crop" data-img="images/img3.png">
+      <img src="images/img3.png" alt="Textured crop fade">
+      <div class="gallery-overlay">
+        <h3>Textured Crop</h3>
+        <p>Strong shape, sharp line-up and smooth fade.</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-title="Curly Skin Fade" data-img="images/ime4.png">
+      <img src="images/ime4.png" alt="Curly skin fade">
+      <div class="gallery-overlay">
+        <h3>Curly Skin Fade</h3>
+        <p>Defined curls with a clean faded finish.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="before-after reveal">
+  <span class="section-label">Transformations</span>
+  <h2>Before & After Style Work</h2>
+
+  <div class="before-after-box">
+    <div>
+      <h3>Before</h3>
+      <p>Untidy length, uneven shape and no clear finish.</p>
+    </div>
+
+    <div>
+      <h3>After</h3>
+      <p>Clean fade, sharper profile and a polished barbered look.</p>
+    </div>
   </div>
 </section>
 
@@ -166,23 +212,42 @@
         <p class="walkins">Walk-ins welcome when available.</p>
       </div>
 
-      <form>
-        <input type="text" placeholder="Your Name">
-        <input type="tel" placeholder="Phone Number">
-        <select>
-          <option>Select Service</option>
-          <option>Haircut</option>
+      <form id="bookingForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <select required>
+          <option value="">Select Service</option>
+          <option>Classic Cut</option>
           <option>Skin Fade</option>
           <option>Beard Trim</option>
           <option>Hot Towel Shave</option>
         </select>
-        <input type="date">
+        <input type="date" required>
         <textarea placeholder="Message"></textarea>
         <button type="submit">Request Booking</button>
+        <p class="demo-note">Demo booking form for portfolio purposes.</p>
       </form>
     </div>
   </div>
 </section>
+
+<section class="thank-you" id="thank-you">
+  <div class="thank-you-box">
+    <span class="section-label">Thank You</span>
+    <h2>Request Received</h2>
+    <p>
+      Thanks for getting in touch. This demo form shows how a real booking
+      confirmation page could look for a barber business.
+    </p>
+    <a href="#home" class="btn">Back To Home</a>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <span class="close-lightbox">&times;</span>
+  <img id="lightboxImg" src="" alt="">
+  <h3 id="lightboxTitle"></h3>
+</div>
 
 <a class="whatsapp-btn" href="https://wa.me/441234567890" target="_blank">💬 WhatsApp Us</a>
 
