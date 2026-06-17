@@ -47,3 +47,31 @@ bookingForm.addEventListener("submit", (e) => {
   thankYou.scrollIntoView({ behavior: "smooth" });
   bookingForm.reset();
 });
+const aboutImages = [
+  "image 1.png",
+  "image2.png",
+  "imge3.png",
+  "ime4.png"
+];
+
+let currentImage = 0;
+
+setInterval(() => {
+  currentImage++;
+
+  if (currentImage >= aboutImages.length) {
+    currentImage = 0;
+  }
+
+  const slider = document.getElementById("aboutSlider");
+
+  if (slider) {
+    slider.style.opacity = "0";
+
+    setTimeout(() => {
+      slider.src = aboutImages[currentImage];
+      slider.style.opacity = "1";
+    }, 300);
+  }
+
+}, 3000);
