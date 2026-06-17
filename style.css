@@ -1,704 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap');
+// Smooth reveal animations
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:'Inter', Arial, sans-serif;
-  background:#0a0a0a;
-  color:white;
-}
-
-.sticky-header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:999;
-  padding:18px 8%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:rgba(0,0,0,.72);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(212,175,55,.25);
-}
-
-.sticky-header h2{
-  font-family:'Playfair Display', serif;
-  color:#D4AF37;
-  font-size:2rem;
-}
-
-.sticky-header nav{
-  display:flex;
-  gap:28px;
-}
-
-.sticky-header a{
-  color:white;
-  text-decoration:none;
-  font-weight:600;
-  position:relative;
-}
-
-.sticky-header a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  width:0;
-  height:2px;
-  background:#D4AF37;
-  transition:.3s;
-}
-
-.sticky-header a:hover::after{
-  width:100%;
-}
-
-.hero{
-  min-height:100vh;
-  background:
-    linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.92)),
-    url("https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1800&q=80");
-  background-size:cover;
-  background-position:center;
-  padding:110px 28px 28px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.hero-frame{
-  width:100%;
-  min-height:86vh;
-  padding:45px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  position:relative;
-}
-
-.hero-frame::before,
-.hero-frame::after{
-  content:"";
-  position:absolute;
-  width:180px;
-  height:180px;
-  pointer-events:none;
-}
-
-.hero-frame::before{
-  top:0;
-  left:0;
-  border-top:2px solid #D4AF37;
-  border-left:2px solid #D4AF37;
-}
-
-.hero-frame::after{
-  bottom:0;
-  right:0;
-  border-bottom:2px solid #D4AF37;
-  border-right:2px solid #D4AF37;
-}
-
-.hero-content{
-  text-align:center;
-  max-width:1100px;
-  margin:auto;
-  z-index:2;
-}
-
-.small-title,
-.section-label{
-  color:#D4AF37;
-  text-transform:uppercase;
-  letter-spacing:7px;
-  font-size:13px;
-  font-weight:700;
-}
-
-.divider{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:18px;
-  margin:24px 0;
-}
-
-.divider span{
-  width:80px;
-  height:1px;
-  background:#D4AF37;
-}
-
-.hero h1{
-  font-family:'Playfair Display', serif;
-  font-size:6.4rem;
-  line-height:1.05;
-  color:white;
-  margin-bottom:24px;
-  text-shadow:0 0 28px rgba(212,175,55,.28);
-}
-
-.hero-content > p{
-  font-size:1.45rem;
-  color:#f2f2f2;
-  margin-bottom:36px;
-}
-
-.hero-buttons{
-  display:flex;
-  justify-content:center;
-  gap:24px;
-  flex-wrap:wrap;
-}
-
-.btn,
-form button{
-  background:#D4AF37;
-  color:black;
-  text-decoration:none;
-  padding:17px 54px;
-  border-radius:2px;
-  font-size:15px;
-  font-weight:700;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  display:inline-block;
-  border:1px solid #D4AF37;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.btn:hover,
-form button:hover{
-  transform:translateY(-4px);
-  box-shadow:0 0 25px rgba(212,175,55,.5);
-}
-
-.secondary-btn{
-  background:rgba(0,0,0,.25);
-  color:white;
-}
-
-.trust-bar{
-  margin-top:60px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  background:rgba(0,0,0,.72);
-  border-top:1px solid rgba(212,175,55,.45);
-  z-index:2;
-}
-
-.trust-bar div{
-  padding:24px;
-  text-align:center;
-  border-right:1px solid rgba(212,175,55,.45);
-}
-
-.trust-bar div:last-child{
-  border-right:none;
-}
-
-.trust-bar h3{
-  color:#D4AF37;
-  font-size:1.9rem;
-  margin-bottom:10px;
-}
-
-.trust-bar p{
-  text-transform:uppercase;
-  letter-spacing:2px;
-  color:white;
-  line-height:1.5;
-  font-size:13px;
-}
-
-.about,
-.services,
-.gallery,
-.before-after,
-.reviews,
-.contact,
-.thank-you{
-  padding:115px 10%;
-}
-
-.about{
-  background:#111;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:75px;
-  align-items:center;
-}
-
-.about-image img{
-  width:100%;
-  height:520px;
-  object-fit:cover;
-  border-radius:10px;
-  box-shadow:0 25px 60px rgba(0,0,0,.45);
-}
-
-.about-content h2,
-.services h2,
-.gallery h2,
-.before-after h2,
-.reviews h2,
-.contact h2,
-.thank-you h2{
-  font-family:'Playfair Display', serif;
-  color:white;
-  font-size:3.3rem;
-  margin:18px 0 25px;
-}
-
-.about-content p,
-.gallery-intro,
-.contact-content > p,
-.thank-you p{
-  color:#ddd;
-  line-height:1.9;
-}
-
-.feature-list{
-  margin-top:35px;
-  display:grid;
-  gap:12px;
-}
-
-.feature-list p{
-  color:#D4AF37;
-  font-weight:600;
-}
-
-.services,
-.reviews,
-.thank-you{
-  background:#0a0a0a;
-  text-align:center;
-}
-
-.service-grid,
-.review-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:25px;
-  margin-top:45px;
-}
-
-.review-grid{
-  grid-template-columns:repeat(3,1fr);
-}
-
-.service-card,
-.review-card{
-  background:#151515;
-  padding:45px 28px;
-  border-radius:8px;
-  border:1px solid #222;
-  transition:.3s;
-}
-
-.service-card:hover,
-.review-card:hover{
-  transform:translateY(-10px);
-  border-color:#D4AF37;
-  box-shadow:0 20px 45px rgba(0,0,0,.35);
-}
-
-.service-card h3,
-.review-card h3{
-  color:#D4AF37;
-  margin-bottom:15px;
-}
+const revealElements = document.querySelectorAll(".reveal");
 
-.service-card p,
-.review-card p{
-  color:#ddd;
-  line-height:1.7;
-  margin-bottom:22px;
-}
-
-.service-card span,
-.review-card span{
-  font-weight:bold;
-  color:white;
-}
-
-.gallery{
-  background:#111;
-  text-align:center;
-}
-
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:25px;
-  margin-top:45px;
-}
-
-.gallery-item{
-  position:relative;
-  height:390px;
-  overflow:hidden;
-  border-radius:10px;
-  border:1px solid #222;
-  cursor:pointer;
-  transition:.35s;
-  background:#151515;
-}
-
-.gallery-item::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border:1px solid transparent;
-  z-index:3;
-  transition:.35s;
-}
-
-.gallery-item:hover{
-  transform:translateY(-8px);
-}
-
-.gallery-item:hover::before{
-  inset:12px;
-  border-color:#D4AF37;
-}
-
-.gallery-item img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.5s;
-  filter:brightness(.8);
-}
-
-.gallery-item:hover img{
-  transform:scale(1.1);
-  filter:brightness(.55);
-}
-
-.gallery-overlay{
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:100%;
-  padding:28px;
-  background:linear-gradient(transparent, rgba(0,0,0,.9));
-  text-align:left;
-  z-index:4;
-}
-
-.gallery-overlay h3{
-  color:#D4AF37;
-  margin-bottom:8px;
-}
-
-.gallery-overlay p{
-  color:white;
-  font-size:14px;
-}
-
-.before-after{
-  background:#0a0a0a;
-  text-align:center;
-}
-
-.before-after-box{
-  margin-top:45px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:25px;
-}
-
-.before-after-box div{
-  background:#151515;
-  border:1px solid #222;
-  padding:40px;
-  border-radius:8px;
-}
-
-.before-after-box h3{
-  color:#D4AF37;
-  margin-bottom:12px;
-}
-
-.before-after-box p{
-  color:#ddd;
-}
-
-.contact{
-  background:#111;
-  text-align:center;
-}
-
-.contact-content{
-  max-width:1100px;
-  margin:auto;
-}
-
-.contact-content > p{
-  margin-bottom:45px;
-}
-
-.contact-wrapper{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  text-align:left;
-  margin-top:30px;
-}
-
-.contact-info,
-form{
-  background:#151515;
-  padding:38px;
-  border-radius:8px;
-  border:1px solid #222;
-}
-
-.contact-info h3{
-  color:#D4AF37;
-  margin:22px 0 15px;
-}
-
-.contact-info h3:first-child{
-  margin-top:0;
-}
-
-.contact-info p{
-  color:#ddd;
-  margin-bottom:12px;
-}
-
-.walkins{
-  color:#D4AF37 !important;
-  font-weight:bold;
-}
-
-form{
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-
-input,
-select,
-textarea{
-  width:100%;
-  padding:15px;
-  background:#0a0a0a;
-  border:1px solid #333;
-  color:white;
-  border-radius:4px;
-  outline:none;
-  font-family:'Inter', Arial, sans-serif;
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-  border-color:#D4AF37;
-}
-
-textarea{
-  min-height:120px;
-  resize:none;
-}
-
-.demo-note{
-  color:#777;
-  font-size:13px;
-  text-align:center;
-}
+function revealOnScroll() {
+revealElements.forEach((element) => {
+const elementTop = element.getBoundingClientRect().top;
+const windowHeight = window.innerHeight;
 
-.thank-you{
-  display:none;
+```
+if (elementTop < windowHeight - 100) {
+  element.classList.add("active");
 }
+```
 
-.thank-you.active{
-  display:block;
+});
 }
 
-.thank-you-box{
-  max-width:750px;
-  margin:auto;
-  background:#151515;
-  border:1px solid #D4AF37;
-  padding:60px;
-  border-radius:10px;
-}
-
-.lightbox{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.92);
-  z-index:2000;
-  display:none;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  padding:30px;
-}
-
-.lightbox.active{
-  display:flex;
-}
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
 
-.lightbox img{
-  max-width:90%;
-  max-height:75vh;
-  border:2px solid #D4AF37;
-  border-radius:8px;
-}
+// Gallery lightbox
 
-.lightbox h3{
-  color:#D4AF37;
-  margin-top:20px;
-  font-size:1.7rem;
-}
+const galleryItems = document.querySelectorAll(".gallery-item");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const lightboxTitle = document.getElementById("lightboxTitle");
+const closeLightbox = document.querySelector(".close-lightbox");
 
-.close-lightbox{
-  position:absolute;
-  top:30px;
-  right:40px;
-  font-size:45px;
-  color:white;
-  cursor:pointer;
-}
+galleryItems.forEach((item) => {
+item.addEventListener("click", () => {
+if (!lightbox || !lightboxImg || !lightboxTitle) return;
 
-.whatsapp-btn{
-  position:fixed;
-  right:25px;
-  bottom:25px;
-  z-index:1000;
-  background:#D4AF37;
-  color:black;
-  padding:15px 22px;
-  border-radius:40px;
-  text-decoration:none;
-  font-weight:700;
-  box-shadow:0 0 25px rgba(212,175,55,.45);
-}
+```
+lightbox.classList.add("active");
+lightboxImg.src = item.getAttribute("data-img");
+lightboxTitle.textContent = item.getAttribute("data-title");
+```
 
-footer{
-  background:#050505;
-  text-align:center;
-  padding:25px;
-  color:#aaa;
-  font-size:14px;
-}
+});
+});
 
-.reveal{
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s ease;
+if (closeLightbox) {
+closeLightbox.addEventListener("click", () => {
+lightbox.classList.remove("active");
+});
 }
 
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
+if (lightbox) {
+lightbox.addEventListener("click", (e) => {
+if (e.target === lightbox) {
+lightbox.classList.remove("active");
 }
-
-@media(max-width:1100px){
-  .service-grid,
-  .gallery-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .review-grid,
-  .contact-wrapper,
-  .before-after-box{
-    grid-template-columns:1fr;
-  }
-
-  .hero h1{
-    font-size:4.8rem;
-  }
+});
 }
-
-@media(max-width:768px){
-  .sticky-header{
-    flex-direction:column;
-    gap:15px;
-    padding:16px;
-  }
-
-  .sticky-header h2{
-    font-size:1.8rem;
-  }
 
-  .sticky-header nav{
-    gap:15px;
-    flex-wrap:wrap;
-    justify-content:center;
-    font-size:14px;
-  }
+// Booking form
 
-  .hero{
-    padding:145px 15px 20px;
-  }
+const bookingForm = document.getElementById("bookingForm");
+const thankYouSection = document.getElementById("thank-you");
 
-  .hero-frame{
-    padding:30px 18px;
-  }
+if (bookingForm && thankYouSection) {
+bookingForm.addEventListener("submit", (e) => {
+e.preventDefault();
 
-  .small-title,
-  .section-label{
-    letter-spacing:4px;
-  }
+```
+thankYouSection.style.display = "flex";
 
-  .hero h1{
-    font-size:3.4rem;
-  }
+thankYouSection.scrollIntoView({
+  behavior: "smooth"
+});
 
-  .hero-content > p{
-    font-size:1.1rem;
-  }
+bookingForm.reset();
+```
 
-  .trust-bar,
-  .service-grid,
-  .gallery-grid,
-  .review-grid{
-    grid-template-columns:1fr;
-  }
-
-  .about{
-    grid-template-columns:1fr;
-  }
-
-  .about-image img{
-    height:360px;
-  }
-
-  .about-content h2,
-  .services h2,
-  .gallery h2,
-  .before-after h2,
-  .reviews h2,
-  .contact h2,
-  .thank-you h2{
-    font-size:2.4rem;
-  }
-
-  .whatsapp-btn{
-    right:15px;
-    bottom:15px;
-
-    font-size:14px;
-  }
-}
-.about-image img{
-    transition: opacity 1.5s ease-in-out;
+});
 }
