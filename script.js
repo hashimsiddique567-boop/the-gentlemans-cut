@@ -72,6 +72,13 @@ setInterval(() => {
       slider.src = aboutImages[currentImage];
       slider.style.opacity = "1";
     }, 300);
+
+  
   }
 
 }, 3000);
+.about-image img{
+    width:100%;
+    border-radius:20px;
+    transition:opacity 0.5s ease-in-out;
+}
