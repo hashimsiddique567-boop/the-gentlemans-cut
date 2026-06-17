@@ -86,3 +86,31 @@ if (aboutSlider) {
     }, 300);
   }, 2500);
 }
+// About image slider
+
+const aboutSlider = document.getElementById("aboutSlider");
+
+if (aboutSlider) {
+
+  const aboutImages = [
+    "image 1.png",
+    "image2.png",
+    "imge3.png",
+    "ime4.png"
+  ];
+
+  let currentImage = 0;
+
+  setInterval(() => {
+
+    aboutSlider.style.opacity = "0";
+
+    setTimeout(() => {
+      currentImage = (currentImage + 1) % aboutImages.length;
+      aboutSlider.src = aboutImages[currentImage];
+      aboutSlider.style.opacity = "1";
+    }, 1500);
+
+  }, 5000);
+
+}
